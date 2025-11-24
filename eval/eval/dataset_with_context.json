@@ -1,0 +1,50 @@
+[
+  {
+    "question": "Quel est le montant de la facture impayée mentionnée dans la mise en demeure?",
+    "ground_truth_answer": "Le montant de la facture impayée est de 18 250 €.",
+    "context": "Ce chunk est un extrait d'une mise en demeure adressée par le Cabinet Parenti, demandant le paiement d'une facture impayée de 18 250 € avec un délai de 8 jours avant d'engager des actions judiciaires.",
+    "chunk_index": "5f28f1f1-8c2a-4713-8faa-4393579e523c"
+  },
+  {
+    "question": "Quelle est la décision de la Cour de cassation concernant une clause de non-concurrence non limitée dans le temps ?",
+    "ground_truth_answer": "La Cour de cassation a jugé qu'une clause de non-concurrence non limitée dans le temps est illicite et rappelle que toute clause restrictive doit être proportionnée dans le temps et l'espace.",
+    "context": "Ce chunk présente les faits et la portée d'une décision de la Cour de cassation, chambre commerciale, concernant la légalité d'une clause de non-concurrence non limitée dans le temps. Cour de cassation, chambre commerciale, 15 nov. 2023 Faits : Une clause de non-concurrence non limitée dans le temps a été jugée illicite. Portée : La Cour rappelle que toute clause restrictive doit être proportionnée dans le temps et l'espace.",
+    "chunk_index": "5b37078d-c755-4ec3-a657-9b1f1fbd35c0"
+  },
+  {
+    "question": "Quelles sont les principales évolutions du droit des sociétés introduites par la loi de simplification du 22 février 2025 ?",
+    "ground_truth_answer": "Les principales évolutions sont la simplification des formalités de transformation de SARL en SAS et le durcissement des règles de transparence des holdings.",
+    "context": "Ce chunk résume les principales évolutions du droit des sociétés introduites par la loi de simplification du 22 février 2025, notamment la simplification des formalités de transformation de SARL en SAS et le durcissement des règles de transparence des holdings, avec un impact significatif sur les investisseurs.",
+    "chunk_index": "93f20920-52e1-41fa-90f4-8af6c3f7e96b"
+  },
+  {
+    "question": "Quel est le montant du litige commercial impliquant le Client A enregistré le 12 janvier 2024?",
+    "ground_truth_answer": "Le montant du litige commercial impliquant le Client A est de 36 000 €.",
+    "context": "Le chunk présente une ligne de la table \"historique_contentieux\", détaillant un dossier en cours portant sur un litige commercial impliquant le Client A, enregistré le 12 janvier 2024 avec un montant de 36 000 €.\n\n[Table: historique_contentieux]Columns: Dossier, Type, Client, Date dépôt, Statut, Montant ()Line 1: Dossier:D4582 Type:Litige commercial Client:Client A Date dépôt:2024-01-12 Statut:En cours Montant ():36000",
+    "chunk_index": "98f2cf16-cc79-430b-9d45-e26441b8ee04"
+  },
+  {
+    "question": "Quels sont les principaux éléments d'un contrat de partenariat commercial entre Alpha Consulting et un cabinet?",
+    "ground_truth_answer": "Le contrat de partenariat commercial entre Alpha Consulting et un cabinet inclut les éléments suivants : 1. Objet : fourniture de prestations juridiques en matière de fusions-acquisitions. 2. Confidentialité : les informations échangées sont confidentielles. 3. Durée : 12 mois, renouvelable par tacite reconduction. 4. Honoraires : facturation mensuelle selon les modalités définies en annexe. 5. Droit applicable : droit français.",
+    "context": "Ce chunk présente le texte intégral d'un contrat de partenariat commercial entre la société Alpha Consulting et un cabinet, détaillant l'objet, la confidentialité, la durée, les honoraires, et le droit applicable.",
+    "chunk_index": "58b7fbb2-6dd3-4b45-af17-b5e5fbad33bc"
+  },
+  {
+    "question": "Quel est le statut du dossier D4584 concernant l'affaire de contrefaçon impliquant le Client C?",
+    "ground_truth_answer": "Le statut du dossier D4584 est 'En cours'.",
+    "context": "Le chunk présente une ligne du tableau 'historique_contentieux', spécifiquement le dossier D4584 concernant une affaire de contrefaçon impliquant le Client C, avec des détails sur la date de dépôt, le statut et le montant en jeu.",
+    "chunk_index": "f1bfd986-b154-4deb-94d0-3a6deb0f3d86"
+  },
+  {
+    "question": "Quels sont les impacts de la réforme du régime des sociétés mères sur les déductions fiscales pour les dividendes en 2024?",
+    "ground_truth_answer": "La réforme du régime des sociétés mères affectera les déductions possibles en cas de distributions de dividendes, limitant les exonérations à 90 dans certains cas, contre 95 précédemment. Un tableau comparatif des impacts par type de société est en cours de réalisation.",
+    "context": "Ce chunk présente une note interne concernant les impacts de la réforme du régime des sociétés mères sur les déductions fiscales pour les dividendes, ainsi que des recommandations pour les clients concernés et l'élaboration d'un tableau comparatif des impacts.\n\nNOTE INTERNE CONSULTATION FISCALITÉ 2024La réforme du régime des sociétés mères affectera les déductions possibles en cas de distributions de dividendes. Nous recommandons aux clients concernés de vérifier leurs schémas doptimisation fiscale en amont de tout changement statutaire.Les nouvelles dispositions limitent les exonérations à 90 dans certains cas, contre 95 précédemment. Un tableau comparatif des impacts par type de société est en cours de réalisation.Responsable : M. Delmas, fiscalité internationale.",
+    "chunk_index": "36ed1080-007d-457f-9d29-d6d10fc374c9"
+  },
+  {
+    "question": "Quel est le montant du dossier D4583 concernant une rupture abusive de contrat impliquant le Client B?",
+    "ground_truth_answer": "12500 euros",
+    "context": "Ce segment présente une ligne spécifique du tableau 'historique_contentieux', détaillant un dossier de rupture abusive de contrat impliquant le Client B, avec des informations sur la date de dépôt, le statut du dossier et le montant en euros.\n\n[Table: historique_contentieux]Columns: Dossier, Type, Client, Date dépôt, Statut, Montant ()Line 2: Dossier:D4583 Type:Rupture abusive contrat Client:Client B Date dépôt:2024-02-09 Statut:Clos Montant ():12500",
+    "chunk_index": "e674158e-b258-411e-a7c8-ccaa6d08fa1b"
+  }
+]

@@ -1,0 +1,229 @@
+{
+  "retrieval": {
+    "1": {
+      "precision": 0.125,
+      "recall": 0.125
+    },
+    "3": {
+      "precision": 0.125,
+      "recall": 0.375
+    },
+    "5": {
+      "precision": 0.1,
+      "recall": 0.5
+    }
+  },
+  "generation": {
+    "faithfulness": 1.0
+  },
+  "examples": [
+    {
+      "question": "Quelles sont les nouvelles exonérations pour les sociétés mères en 2024?",
+      "expected_answer": "Les nouvelles dispositions limitent les exonérations à 90 dans certains cas, contre 95 précédemment.",
+      "generated_answer": "La note interne (Source 1) indique que la réforme du régime des sociétés mères en 2024 « limite les exonérations à 90 dans certains cas, contre 95 précédemment », et précise que ces dispositions affectent les déductions en cas de distributions de dividendes. Un tableau comparatif des impacts par type de société est en cours de réalisation (Responsable : M. Delmas).\n\nLes documents internes ne donnent pas plus de détails sur les cas concernés ni sur la portée exacte de ces « 90 » (unités, conditions, etc.), donc il n'est pas possible de répondre avec plus de précision à partir des sources fournies.",
+      "retrieved_ids": [
+        "62033e35-23dd-4c35-99a6-5917fc7b58b3",
+        "d0e90d70-d5dd-40b5-86da-8bf9246f60d6",
+        "4c8565d8-c1b7-4f7b-8259-f7cdb393c91a",
+        "43c6201d-e584-416e-bb34-e95a9f2ce865",
+        "bb292817-42f4-45aa-ae43-3bed9b6ceac6"
+      ],
+      "relevant_ids": [
+        "0ae8b596-f529-4a92-a28c-bb1375c8af60"
+      ],
+      "retrieval_metrics": {
+        "precision@1": 0.0,
+        "recall@1": 0.0,
+        "precision@3": 0.0,
+        "recall@3": 0.0,
+        "precision@5": 0.0,
+        "recall@5": 0.0
+      },
+      "generation_metrics": {
+        "faithfulness": 1.0
+      }
+    },
+    {
+      "question": "Quel est le montant à régler dans la mise en demeure pour impayé?",
+      "expected_answer": "La somme à régler est de 18 250 au titre de la facture n4785.",
+      "generated_answer": "La mise en demeure demande le paiement de la somme de 18 250.",
+      "retrieved_ids": [
+        "bf8f4883-e4b3-43e7-aa29-6996dd287db9",
+        "c4bee2c1-37ba-475f-b74a-e1999fc86651",
+        "bb292817-42f4-45aa-ae43-3bed9b6ceac6",
+        "0ae8b596-f529-4a92-a28c-bb1375c8af60",
+        "43c6201d-e584-416e-bb34-e95a9f2ce865"
+      ],
+      "relevant_ids": [
+        "c4bee2c1-37ba-475f-b74a-e1999fc86651"
+      ],
+      "retrieval_metrics": {
+        "precision@1": 0.0,
+        "recall@1": 0.0,
+        "precision@3": 0.3333333333333333,
+        "recall@3": 1.0,
+        "precision@5": 0.2,
+        "recall@5": 1.0
+      },
+      "generation_metrics": {
+        "faithfulness": 1.0
+      }
+    },
+    {
+      "question": "Quelle est la durée initiale du contrat de partenariat commercial entre Alpha Consulting et le cabinet?",
+      "expected_answer": "Ce partenariat est conclu pour une durée initiale de 12 mois à compter de la signature.",
+      "generated_answer": "La durée initiale est de 12 mois à compter de la signature (contrat, Source 1).",
+      "retrieved_ids": [
+        "4c8565d8-c1b7-4f7b-8259-f7cdb393c91a",
+        "0ae8b596-f529-4a92-a28c-bb1375c8af60",
+        "c4bee2c1-37ba-475f-b74a-e1999fc86651",
+        "43c6201d-e584-416e-bb34-e95a9f2ce865",
+        "bb292817-42f4-45aa-ae43-3bed9b6ceac6"
+      ],
+      "relevant_ids": [
+        "43c6201d-e584-416e-bb34-e95a9f2ce865"
+      ],
+      "retrieval_metrics": {
+        "precision@1": 0.0,
+        "recall@1": 0.0,
+        "precision@3": 0.0,
+        "recall@3": 0.0,
+        "precision@5": 0.2,
+        "recall@5": 1.0
+      },
+      "generation_metrics": {
+        "faithfulness": 1.0
+      }
+    },
+    {
+      "question": "Quel est le statut du dossier D4582 dans l'historique des contentieux?",
+      "expected_answer": "Le statut du dossier D4582 est 'En cours'.",
+      "generated_answer": "D'après les documents internes (Source 1), le statut du dossier D4582 est : En cours.",
+      "retrieved_ids": [
+        "c4bee2c1-37ba-475f-b74a-e1999fc86651",
+        "bb292817-42f4-45aa-ae43-3bed9b6ceac6",
+        "0ae8b596-f529-4a92-a28c-bb1375c8af60",
+        "bf8f4883-e4b3-43e7-aa29-6996dd287db9",
+        "43c6201d-e584-416e-bb34-e95a9f2ce865"
+      ],
+      "relevant_ids": [
+        "4c8565d8-c1b7-4f7b-8259-f7cdb393c91a"
+      ],
+      "retrieval_metrics": {
+        "precision@1": 0.0,
+        "recall@1": 0.0,
+        "precision@3": 0.0,
+        "recall@3": 0.0,
+        "precision@5": 0.0,
+        "recall@5": 0.0
+      },
+      "generation_metrics": {
+        "faithfulness": 1.0
+      }
+    },
+    {
+      "question": "Quel est le statut du dossier D4584 dans l'historique contentieux?",
+      "expected_answer": "Le statut du dossier D4584 est 'En cours'.",
+      "generated_answer": "D'après l'historique contentieux (Source 2), le statut du dossier D4584 est : En cours.",
+      "retrieved_ids": [
+        "c4bee2c1-37ba-475f-b74a-e1999fc86651",
+        "bb292817-42f4-45aa-ae43-3bed9b6ceac6",
+        "0ae8b596-f529-4a92-a28c-bb1375c8af60",
+        "bf8f4883-e4b3-43e7-aa29-6996dd287db9",
+        "43c6201d-e584-416e-bb34-e95a9f2ce865"
+      ],
+      "relevant_ids": [
+        "bb292817-42f4-45aa-ae43-3bed9b6ceac6"
+      ],
+      "retrieval_metrics": {
+        "precision@1": 0.0,
+        "recall@1": 0.0,
+        "precision@3": 0.3333333333333333,
+        "recall@3": 1.0,
+        "precision@5": 0.2,
+        "recall@5": 1.0
+      },
+      "generation_metrics": {
+        "faithfulness": 1.0
+      }
+    },
+    {
+      "question": "Quelles sont les nouveautés majeures introduites par la loi de simplification du 22 février 2025 concernant le droit des sociétés ?",
+      "expected_answer": "La loi de simplification du 22 février 2025 introduit deux nouveautés majeures : la simplification des formalités de transformation de SARL en SAS et le durcissement des règles de transparence des holdings.",
+      "generated_answer": "Selon la note interne (Source 1), la loi de simplification du 22 février 2025 introduit deux nouveautés majeures :\n- simplification des formalités de transformation de SARL en SAS ;\n- durcissement des règles de transparence des holdings.\n\nLa note précise que ces éléments auront un impact significatif pour nos clients investisseurs.",
+      "retrieved_ids": [
+        "d0e90d70-d5dd-40b5-86da-8bf9246f60d6",
+        "62033e35-23dd-4c35-99a6-5917fc7b58b3",
+        "43c6201d-e584-416e-bb34-e95a9f2ce865",
+        "4c8565d8-c1b7-4f7b-8259-f7cdb393c91a",
+        "0ae8b596-f529-4a92-a28c-bb1375c8af60"
+      ],
+      "relevant_ids": [
+        "d0e90d70-d5dd-40b5-86da-8bf9246f60d6"
+      ],
+      "retrieval_metrics": {
+        "precision@1": 1.0,
+        "recall@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "recall@3": 1.0,
+        "precision@5": 0.2,
+        "recall@5": 1.0
+      },
+      "generation_metrics": {
+        "faithfulness": 1.0
+      }
+    },
+    {
+      "question": "Quelles sont les conditions de validité d'une clause de non-concurrence selon la Cour de cassation ?",
+      "expected_answer": "Une clause de non-concurrence doit être limitée dans le temps et dans l'espace pour être considérée comme licite.",
+      "generated_answer": "Selon la Cour de cassation (ch. com., 15 nov. 2023) : une clause de non‑concurrence doit être proportionnée dans le temps et dans l'espace. La Cour a jugé illicite une clause qui n'était pas limitée dans le temps.",
+      "retrieved_ids": [
+        "43c6201d-e584-416e-bb34-e95a9f2ce865",
+        "0ae8b596-f529-4a92-a28c-bb1375c8af60",
+        "bb292817-42f4-45aa-ae43-3bed9b6ceac6",
+        "4c8565d8-c1b7-4f7b-8259-f7cdb393c91a",
+        "c4bee2c1-37ba-475f-b74a-e1999fc86651"
+      ],
+      "relevant_ids": [
+        "bf8f4883-e4b3-43e7-aa29-6996dd287db9"
+      ],
+      "retrieval_metrics": {
+        "precision@1": 0.0,
+        "recall@1": 0.0,
+        "precision@3": 0.0,
+        "recall@3": 0.0,
+        "precision@5": 0.0,
+        "recall@5": 0.0
+      },
+      "generation_metrics": {
+        "faithfulness": 1.0
+      }
+    },
+    {
+      "question": "Quel est le montant du dossier D4583 concernant la rupture abusive de contrat ?",
+      "expected_answer": "Le montant du dossier D4583 est de 12500.",
+      "generated_answer": "Le dossier D4583 (Rupture abusive contrat) est indiqué pour un montant de 12 500 (devise non précisée dans les documents internes).",
+      "retrieved_ids": [
+        "0ae8b596-f529-4a92-a28c-bb1375c8af60",
+        "c4bee2c1-37ba-475f-b74a-e1999fc86651",
+        "bb292817-42f4-45aa-ae43-3bed9b6ceac6",
+        "bf8f4883-e4b3-43e7-aa29-6996dd287db9",
+        "4c8565d8-c1b7-4f7b-8259-f7cdb393c91a"
+      ],
+      "relevant_ids": [
+        "62033e35-23dd-4c35-99a6-5917fc7b58b3"
+      ],
+      "retrieval_metrics": {
+        "precision@1": 0.0,
+        "recall@1": 0.0,
+        "precision@3": 0.0,
+        "recall@3": 0.0,
+        "precision@5": 0.0,
+        "recall@5": 0.0
+      },
+      "generation_metrics": {
+        "faithfulness": 1.0
+      }
+    }
+  ]
+}

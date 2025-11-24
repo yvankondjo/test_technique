@@ -1,0 +1,50 @@
+[
+  {
+    "question": "Quelles sont les nouvelles exonérations pour les sociétés mères en 2024?",
+    "ground_truth_answer": "Les nouvelles dispositions limitent les exonérations à 90 dans certains cas, contre 95 précédemment.",
+    "context": "NOTE INTERNE CONSULTATION FISCALITÉ 2024La réforme du régime des sociétés mères affectera les déductions possibles en cas de distributions de dividendes. Nous recommandons aux clients concernés de vérifier leurs schémas doptimisation fiscale en amont de tout changement statutaire.Les nouvelles dispositions limitent les exonérations à 90 dans certains cas, contre 95 précédemment. Un tableau comparatif des impacts par type de société est en cours de réalisation.Responsable : M. Delmas, fiscalité internationale.",
+    "chunk_index": "0ae8b596-f529-4a92-a28c-bb1375c8af60"
+  },
+  {
+    "question": "Quel est le montant à régler dans la mise en demeure pour impayé?",
+    "ground_truth_answer": "La somme à régler est de 18 250 au titre de la facture n4785.",
+    "context": "OBJET : MISE EN DEMEURE POUR IMPAYÉMadame, Monsieur,Nous vous mettons en demeure de régler la somme de 18 250 au titre de la facture n4785, échue le 15022024.Conformément aux dispositions du Code civil, nous vous prions de procéder au paiement sous 8 jours à compter de la réception de la présente. À défaut, nous engagerons les procédures judiciaires nécessaires.Nous vous prions dagréer, Madame, Monsieur, lexpression de nos salutations distinguées.Cabinet Parenti, 26 rue de lObservatoire, 75006 Paris",
+    "chunk_index": "c4bee2c1-37ba-475f-b74a-e1999fc86651"
+  },
+  {
+    "question": "Quelle est la durée initiale du contrat de partenariat commercial entre Alpha Consulting et le cabinet?",
+    "ground_truth_answer": "Ce partenariat est conclu pour une durée initiale de 12 mois à compter de la signature.",
+    "context": "CONTRAT DE PARTENARIAT COMMERCIALEntre la société Alpha Consulting et notre cabinet, il est convenu ce qui suit :1. Objet : Le présent contrat vise à encadrer la fourniture de prestations juridiques en matière de fusions-acquisitions.2. Confidentialité : Toute information échangée dans le cadre du présent contrat est strictement confidentielle et ne peut être divulguée sans accord préalable écrit.3. Durée : Ce partenariat est conclu pour une durée initiale de 12 mois à compter de la signature, renouvelable par tacite reconduction.4. Honoraires : Les prestations feront lobjet dune facturation mensuelle selon les modalités définies en annexe.5. Droit applicable : Le présent contrat est régi par le droit français.Fait à Paris, le 4 mars 2024.",
+    "chunk_index": "43c6201d-e584-416e-bb34-e95a9f2ce865"
+  },
+  {
+    "question": "Quel est le statut du dossier D4582 dans l'historique des contentieux?",
+    "ground_truth_answer": "Le statut du dossier D4582 est 'En cours'.",
+    "context": "[Table: historique_contentieux]Columns: Dossier, Type, Client, Date dépôt, Statut, Montant ()Line 1: Dossier:D4582 Type:Litige commercial Client:Client A Date dépôt:2024-01-12 Statut:En cours Montant ():36000",
+    "chunk_index": "4c8565d8-c1b7-4f7b-8259-f7cdb393c91a"
+  },
+  {
+    "question": "Quel est le statut du dossier D4584 dans l'historique contentieux?",
+    "ground_truth_answer": "Le statut du dossier D4584 est 'En cours'.",
+    "context": "[Table: historique_contentieux]Columns: Dossier, Type, Client, Date dépôt, Statut, Montant ()Line 3: Dossier:D4584 Type:Contrefaçon Client:Client C Date dépôt:2024-03-14 Statut:En cours Montant ():70000",
+    "chunk_index": "bb292817-42f4-45aa-ae43-3bed9b6ceac6"
+  },
+  {
+    "question": "Quelles sont les nouveautés majeures introduites par la loi de simplification du 22 février 2025 concernant le droit des sociétés ?",
+    "ground_truth_answer": "La loi de simplification du 22 février 2025 introduit deux nouveautés majeures : la simplification des formalités de transformation de SARL en SAS et le durcissement des règles de transparence des holdings.",
+    "context": "NOTE : Évolutions du droit des sociétés en 2025La loi de simplification du 22 février 2025 introduit deux nouveautés majeures :Simplification des formalités de transformation de SARL en SASDurcissement des règles de transparence des holdingsCes éléments auront un impact significatif pour nos clients investisseurs.",
+    "chunk_index": "d0e90d70-d5dd-40b5-86da-8bf9246f60d6"
+  },
+  {
+    "question": "Quelles sont les conditions de validité d'une clause de non-concurrence selon la Cour de cassation ?",
+    "ground_truth_answer": "Une clause de non-concurrence doit être limitée dans le temps et dans l'espace pour être considérée comme licite.",
+    "context": "Cour de cassation, chambre commerciale, 15 nov. 2023. Faits : Une clause de non-concurrence non limitée dans le temps a été jugée illicite. Portée : La Cour rappelle que toute clause restrictive doit être proportionnée dans le temps et l'espace.",
+    "chunk_index": "bf8f4883-e4b3-43e7-aa29-6996dd287db9"
+  },
+  {
+    "question": "Quel est le montant du dossier D4583 concernant la rupture abusive de contrat ?",
+    "ground_truth_answer": "Le montant du dossier D4583 est de 12500.",
+    "context": "[Table: historique_contentieux]Columns: Dossier, Type, Client, Date dépôt, Statut, Montant ()Line 2: Dossier:D4583 Type:Rupture abusive contrat Client:Client B Date dépôt:2024-02-09 Statut:Clos Montant ():12500",
+    "chunk_index": "62033e35-23dd-4c35-99a6-5917fc7b58b3"
+  }
+]

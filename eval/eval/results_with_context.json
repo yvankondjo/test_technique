@@ -1,0 +1,229 @@
+{
+  "retrieval": {
+    "1": {
+      "precision": 0.0,
+      "recall": 0.0
+    },
+    "3": {
+      "precision": 0.08333333333333333,
+      "recall": 0.25
+    },
+    "5": {
+      "precision": 0.1,
+      "recall": 0.5
+    }
+  },
+  "generation": {
+    "faithfulness": 1.0
+  },
+  "examples": [
+    {
+      "question": "Quel est le montant de la facture impayée mentionnée dans la mise en demeure?",
+      "expected_answer": "Le montant de la facture impayée est de 18 250 €.",
+      "generated_answer": "La mise en demeure indique un montant de 18 250 €.",
+      "retrieved_ids": [
+        "58b7fbb2-6dd3-4b45-af17-b5e5fbad33bc",
+        "93f20920-52e1-41fa-90f4-8af6c3f7e96b",
+        "36ed1080-007d-457f-9d29-d6d10fc374c9",
+        "5f28f1f1-8c2a-4713-8faa-4393579e523c",
+        "f1bfd986-b154-4deb-94d0-3a6deb0f3d86"
+      ],
+      "relevant_ids": [
+        "5f28f1f1-8c2a-4713-8faa-4393579e523c"
+      ],
+      "retrieval_metrics": {
+        "precision@1": 0.0,
+        "recall@1": 0.0,
+        "precision@3": 0.0,
+        "recall@3": 0.0,
+        "precision@5": 0.2,
+        "recall@5": 1.0
+      },
+      "generation_metrics": {
+        "faithfulness": 1.0
+      }
+    },
+    {
+      "question": "Quelle est la décision de la Cour de cassation concernant une clause de non-concurrence non limitée dans le temps ?",
+      "expected_answer": "La Cour de cassation a jugé qu'une clause de non-concurrence non limitée dans le temps est illicite et rappelle que toute clause restrictive doit être proportionnée dans le temps et l'espace.",
+      "generated_answer": "La Cour de cassation, chambre commerciale (15 nov. 2023) a jugé illicite une clause de non‑concurrence qui n'était pas limitée dans le temps. Elle rappelle que toute clause restrictive doit être proportionnée tant dans le temps que dans l'espace.",
+      "retrieved_ids": [
+        "f1bfd986-b154-4deb-94d0-3a6deb0f3d86",
+        "5b37078d-c755-4ec3-a657-9b1f1fbd35c0",
+        "58b7fbb2-6dd3-4b45-af17-b5e5fbad33bc",
+        "93f20920-52e1-41fa-90f4-8af6c3f7e96b",
+        "5f28f1f1-8c2a-4713-8faa-4393579e523c"
+      ],
+      "relevant_ids": [
+        "5b37078d-c755-4ec3-a657-9b1f1fbd35c0"
+      ],
+      "retrieval_metrics": {
+        "precision@1": 0.0,
+        "recall@1": 0.0,
+        "precision@3": 0.3333333333333333,
+        "recall@3": 1.0,
+        "precision@5": 0.2,
+        "recall@5": 1.0
+      },
+      "generation_metrics": {
+        "faithfulness": 1.0
+      }
+    },
+    {
+      "question": "Quelles sont les principales évolutions du droit des sociétés introduites par la loi de simplification du 22 février 2025 ?",
+      "expected_answer": "Les principales évolutions sont la simplification des formalités de transformation de SARL en SAS et le durcissement des règles de transparence des holdings.",
+      "generated_answer": "Selon les documents internes, la loi de simplification du 22 février 2025 introduit deux nouveautés majeures :\n- simplification des formalités de transformation de SARL en SAS ;\n- durcissement des règles de transparence des holdings.\n\nLes documents indiquent que ces éléments auront un impact significatif pour les investisseurs.",
+      "retrieved_ids": [
+        "98f2cf16-cc79-430b-9d45-e26441b8ee04",
+        "e674158e-b258-411e-a7c8-ccaa6d08fa1b",
+        "5b37078d-c755-4ec3-a657-9b1f1fbd35c0",
+        "f1bfd986-b154-4deb-94d0-3a6deb0f3d86",
+        "58b7fbb2-6dd3-4b45-af17-b5e5fbad33bc"
+      ],
+      "relevant_ids": [
+        "93f20920-52e1-41fa-90f4-8af6c3f7e96b"
+      ],
+      "retrieval_metrics": {
+        "precision@1": 0.0,
+        "recall@1": 0.0,
+        "precision@3": 0.0,
+        "recall@3": 0.0,
+        "precision@5": 0.0,
+        "recall@5": 0.0
+      },
+      "generation_metrics": {
+        "faithfulness": 1.0
+      }
+    },
+    {
+      "question": "Quel est le montant du litige commercial impliquant le Client A enregistré le 12 janvier 2024?",
+      "expected_answer": "Le montant du litige commercial impliquant le Client A est de 36 000 €.",
+      "generated_answer": "Le montant du litige commercial (Client A, dépôt 12/01/2024) est de 36 000 €.",
+      "retrieved_ids": [
+        "93f20920-52e1-41fa-90f4-8af6c3f7e96b",
+        "5f28f1f1-8c2a-4713-8faa-4393579e523c",
+        "36ed1080-007d-457f-9d29-d6d10fc374c9",
+        "58b7fbb2-6dd3-4b45-af17-b5e5fbad33bc",
+        "5b37078d-c755-4ec3-a657-9b1f1fbd35c0"
+      ],
+      "relevant_ids": [
+        "98f2cf16-cc79-430b-9d45-e26441b8ee04"
+      ],
+      "retrieval_metrics": {
+        "precision@1": 0.0,
+        "recall@1": 0.0,
+        "precision@3": 0.0,
+        "recall@3": 0.0,
+        "precision@5": 0.0,
+        "recall@5": 0.0
+      },
+      "generation_metrics": {
+        "faithfulness": 1.0
+      }
+    },
+    {
+      "question": "Quels sont les principaux éléments d'un contrat de partenariat commercial entre Alpha Consulting et un cabinet?",
+      "expected_answer": "Le contrat de partenariat commercial entre Alpha Consulting et un cabinet inclut les éléments suivants : 1. Objet : fourniture de prestations juridiques en matière de fusions-acquisitions. 2. Confidentialité : les informations échangées sont confidentielles. 3. Durée : 12 mois, renouvelable par tacite reconduction. 4. Honoraires : facturation mensuelle selon les modalités définies en annexe. 5. Droit applicable : droit français.",
+      "generated_answer": "D’après le contrat fourni, les principaux éléments sont :\n\n- Objet : fourniture de prestations juridiques en matière de fusions‑acquisitions.  \n- Confidentialité : toute information échangée est strictement confidentielle et ne peut être divulguée sans accord préalable écrit.  \n- Durée : durée initiale de 12 mois à compter de la signature, renouvelable par tacite reconduction.  \n- Honoraires : facturation mensuelle selon les modalités définies en annexe.  \n- Droit applicable : le contrat est régi par le droit français.  \n- Formalités de conclusion : lieu et date (Fait à Paris, le 4 mars 2024).",
+      "retrieved_ids": [
+        "5b37078d-c755-4ec3-a657-9b1f1fbd35c0",
+        "5f28f1f1-8c2a-4713-8faa-4393579e523c",
+        "58b7fbb2-6dd3-4b45-af17-b5e5fbad33bc",
+        "93f20920-52e1-41fa-90f4-8af6c3f7e96b",
+        "36ed1080-007d-457f-9d29-d6d10fc374c9"
+      ],
+      "relevant_ids": [
+        "58b7fbb2-6dd3-4b45-af17-b5e5fbad33bc"
+      ],
+      "retrieval_metrics": {
+        "precision@1": 0.0,
+        "recall@1": 0.0,
+        "precision@3": 0.3333333333333333,
+        "recall@3": 1.0,
+        "precision@5": 0.2,
+        "recall@5": 1.0
+      },
+      "generation_metrics": {
+        "faithfulness": 1.0
+      }
+    },
+    {
+      "question": "Quel est le statut du dossier D4584 concernant l'affaire de contrefaçon impliquant le Client C?",
+      "expected_answer": "Le statut du dossier D4584 est 'En cours'.",
+      "generated_answer": "Le dossier D4584 (contrefaçon, Client C) a pour statut : En cours.",
+      "retrieved_ids": [
+        "36ed1080-007d-457f-9d29-d6d10fc374c9",
+        "93f20920-52e1-41fa-90f4-8af6c3f7e96b",
+        "5f28f1f1-8c2a-4713-8faa-4393579e523c",
+        "58b7fbb2-6dd3-4b45-af17-b5e5fbad33bc",
+        "f1bfd986-b154-4deb-94d0-3a6deb0f3d86"
+      ],
+      "relevant_ids": [
+        "f1bfd986-b154-4deb-94d0-3a6deb0f3d86"
+      ],
+      "retrieval_metrics": {
+        "precision@1": 0.0,
+        "recall@1": 0.0,
+        "precision@3": 0.0,
+        "recall@3": 0.0,
+        "precision@5": 0.2,
+        "recall@5": 1.0
+      },
+      "generation_metrics": {
+        "faithfulness": 1.0
+      }
+    },
+    {
+      "question": "Quels sont les impacts de la réforme du régime des sociétés mères sur les déductions fiscales pour les dividendes en 2024?",
+      "expected_answer": "La réforme du régime des sociétés mères affectera les déductions possibles en cas de distributions de dividendes, limitant les exonérations à 90 dans certains cas, contre 95 précédemment. Un tableau comparatif des impacts par type de société est en cours de réalisation.",
+      "generated_answer": "Selon la note interne (Consultation Fiscalité 2024) :  \n- La réforme du régime des sociétés mères affecte les déductions possibles en cas de distributions de dividendes.  \n- Les nouvelles dispositions limitent les exonérations à 90 dans certains cas, contre 95 précédemment.  \n- Il est recommandé aux clients concernés de vérifier leurs schémas d'optimisation fiscale avant tout changement statutaire.  \n- Un tableau comparatif des impacts par type de société est en cours de réalisation (Responsable : M. Delmas, fiscalité internationale).",
+      "retrieved_ids": [
+        "e674158e-b258-411e-a7c8-ccaa6d08fa1b",
+        "98f2cf16-cc79-430b-9d45-e26441b8ee04",
+        "f1bfd986-b154-4deb-94d0-3a6deb0f3d86",
+        "58b7fbb2-6dd3-4b45-af17-b5e5fbad33bc",
+        "5b37078d-c755-4ec3-a657-9b1f1fbd35c0"
+      ],
+      "relevant_ids": [
+        "36ed1080-007d-457f-9d29-d6d10fc374c9"
+      ],
+      "retrieval_metrics": {
+        "precision@1": 0.0,
+        "recall@1": 0.0,
+        "precision@3": 0.0,
+        "recall@3": 0.0,
+        "precision@5": 0.0,
+        "recall@5": 0.0
+      },
+      "generation_metrics": {
+        "faithfulness": 1.0
+      }
+    },
+    {
+      "question": "Quel est le montant du dossier D4583 concernant une rupture abusive de contrat impliquant le Client B?",
+      "expected_answer": "12500 euros",
+      "generated_answer": "Le montant du dossier D4583 (rupture abusive de contrat, Client B) est de 12 500 €.",
+      "retrieved_ids": [
+        "5f28f1f1-8c2a-4713-8faa-4393579e523c",
+        "93f20920-52e1-41fa-90f4-8af6c3f7e96b",
+        "36ed1080-007d-457f-9d29-d6d10fc374c9",
+        "58b7fbb2-6dd3-4b45-af17-b5e5fbad33bc",
+        "5b37078d-c755-4ec3-a657-9b1f1fbd35c0"
+      ],
+      "relevant_ids": [
+        "e674158e-b258-411e-a7c8-ccaa6d08fa1b"
+      ],
+      "retrieval_metrics": {
+        "precision@1": 0.0,
+        "recall@1": 0.0,
+        "precision@3": 0.0,
+        "recall@3": 0.0,
+        "precision@5": 0.0,
+        "recall@5": 0.0
+      },
+      "generation_metrics": {
+        "faithfulness": 1.0
+      }
+    }
+  ]
+}
