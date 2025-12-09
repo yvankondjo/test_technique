@@ -1,3 +1,9 @@
+## Application RAG Juridique
+
+**RAG Juridique** est une application intelligente basée sur la Génération Augmentée par Récupération (RAG) qui permet d'interroger des documents juridiques et contractuels en langage naturel. L'application indexe automatiquement vos documents, les divise en chunks contextuels et les transforme en embeddings vectoriels pour une recherche sémantique précise. Grâce à l'intégration avec OpenAI, elle génère des réponses pertinentes et sourcées directement depuis vos données, offrant une expérience conversationnelle complète avec historique et métriques de performance.
+
+![Interface Chat](docs/Chat_interface.png)
+
 ## Mise en route
 
 Ce document décrit le processus de mise en place complet de l'application RAG juridique. Les instructions ci-dessous fonctionnent sur Windows (PowerShell), macOS et Linux.
