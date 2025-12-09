@@ -78,8 +78,6 @@ Le dossier `eval/` contient les scripts suivants :
 
 ### 7. Architecture technique
 
-![Architecture RAG](docs/Rag_architecture.svg)
-
 ```mermaid
 flowchart LR
     subgraph UI
