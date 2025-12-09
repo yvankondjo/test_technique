@@ -106,10 +106,10 @@ def show_chat_page(rag_engine: RAGEngine, database: Database, vector_store=None)
                         details = message["details"]
                         st.write(f"⏱️ Temps retrieval: {details.get('retrieval_time', 0):.2f}s")
                         st.write(f"⏱️ Temps génération: {details.get('generation_time', 0):.2f}s")
-                        st.write(f"📎 Sources utilisées: {details.get('sources_count', 0)} chunks")
+                        st.write(f"📎 Sources utilisées: {details.get('chunks_count', 0)} chunks")
                 
                 if message.get("sources"):
-                    with st.expander(f"📎 Sources utilisées ({len(message['sources'])} chunks)"):
+                    with st.expander(f"📎 Sources utilisées ({len(message['chunks'])} chunks)"):
                         sources_info = message.get("chunks", [])
                         if sources_info:
                             for idx, chunk_info in enumerate(sources_info[:10], 1):
@@ -128,7 +128,7 @@ def show_chat_page(rag_engine: RAGEngine, database: Database, vector_store=None)
                             if len(sources_info) > 10:
                                 st.caption(f"... et {len(sources_info) - 10} autre(s) source(s)")
                         else:
-                            st.write(f"{len(message['sources'])} chunks référencés")
+                            st.write(f"{len(message['chunks'])} chunks référencés")
     
     if prompt := st.chat_input("Posez votre question..."):
         st.session_state.messages.append({"role": "user", "content": prompt})
@@ -154,7 +154,8 @@ def show_chat_page(rag_engine: RAGEngine, database: Database, vector_store=None)
                         "details": {
                             "retrieval_time": result.get("retrieval_time", 0),
                             "generation_time": result.get("generation_time", 0),
-                            "sources_count": len(result.get("sources", []))
+                            "sources_count": len(result.get("sources", [])),
+                            "chunks_count": len(result.get("chunks", []))
                         }
                     })
                     st.rerun()

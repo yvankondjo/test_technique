@@ -1,97 +1,169 @@
-# Test technique - Tech / Interface chat avec RAG
+## Mise en route
 
-## **1. Contexte**
+Ce document décrit le processus de mise en place complet de l'application RAG juridique. Les instructions ci-dessous fonctionnent sur Windows (PowerShell), macOS et Linux.
 
-Emilia Parenti dirige un **cabinet d’avocats en droit des affaires**, situé à Paris.
+### 1. Prérequis logiciels
+- Python 3.10+ (`python --version` ou `python3 --version` pour vérifier)
+- `git` pour cloner le dépôt
+- Accès réseau à l'API OpenAI (clé valide requise)
 
-Son équipe traite quotidiennement des documents confidentiels : contrats, litiges, notes internes, jurisprudences, etc. Emilia souhaite mettre en place un **chatbot interne sécurisé** pour faciliter l’accès à l'information juridique tout en garantissant la confidentialité.
+### 2. Installation
 
-Pour cette **preuve de concept (PoC)**, les documents utilisés sont **anonymisés** avec de faux noms, et le modèle de langage devra être **appelé via une API** sécurisée.
+**Windows (PowerShell) :**
+```powershell
+git clone <url-du-repo> test_technique
+cd test_technique
+python -m venv .venv
+.venv\Scripts\activate
+pip install --upgrade pip
+pip install -r requirements.txt
+```
 
----
+**macOS / Linux :**
+```bash
+git clone <url-du-repo> test_technique
+cd test_technique
+python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+```
 
-## **2. Objectif fonctionnel**
+### 3. Configuration de l’environnement
+1. Copier l’exemple suivant dans un fichier `.env` à la racine du projet :
+   ```
+   OPENAI_API_KEY=sk-...
+   ```
+2. Les répertoires `data/`, `data/documents/` et `data/chroma_db/` sont créés automatiquement. Conserver ces dossiers pour éviter toute perte d’index.
 
-Le but du test est de concevoir une **application Streamlit** intégrant un système de **RAG (Retrieval-Augmented Generation)** basé sur des documents juridiques uploadés manuellement. L’objectif est de tester :
+### 4. Démarrage de l'application
 
-- ta capacité à **intégrer un LLM à une interface personnalisée**
-- ta rigueur dans le **pré-traitement et vectorisation des documents**
-- la qualité de ton **architecture logicielle**
+**Windows (PowerShell) :**
+```powershell
+streamlit run main.py
+```
 
-### **2.1 Page 1 – Interface Chatbot**
+**macOS / Linux :**
+```bash
+streamlit run main.py
+```
 
-Cette page permet à un collaborateur de :
+L’interface s’ouvre dans le navigateur et propose trois onglets principaux.
 
-- Poser une question à l’IA via une interface de chat
-- Recevoir une réponse basée exclusivement sur les documents internes
-- Créer une nouvelle conversation (💬 bonus : gestion d’un historique de conversations)
+#### Chat
+L’onglet Chat permet d’interroger le moteur RAG sur les documents indexés. Chaque question déclenche une recherche dans la base vectorielle, puis une génération de réponse basée sur les chunks pertinents. L’historique des conversations est conservé et peut être consulté ou repris. Les sources utilisées pour chaque réponse sont affichées avec leur contexte.
 
-Toutes les réponses doivent être générées à partir des **documents vectorisés** (pas de génération hors corpus).
+![Interface Chat](docs/Chat_interface.png)
 
-### **2.2 Page 2 – Gestion des documents**
+#### Documents
+L'onglet Documents gère l'ingestion des fichiers. L'utilisateur peut uploader des documents (TXT, PDF, DOCX, HTML, CSV), visualiser les statistiques d'indexation et réindexer ou supprimer des documents existants. Chaque document est découpé en chunks, enrichi avec un contexte généré par le LLM, puis vectorisé et stocké dans Chroma.
 
-Cette page permet à l’utilisateur de :
+![Interface Documents](docs/Document_Interface.png)
 
-- **Uploader** des documents (`.txt`, `.csv`, `.html`)
-- **Supprimer** des documents existants
-- Automatiquement :
-    - **Nettoyer les fichiers**
-    - **Vectoriser** le contenu pour la base RAG
+#### Monitoring
+L'onglet Monitoring affiche les métriques des appels RAG : temps de retrieval et de génération, nombre de tokens consommés, nombre de sources utilisées. Des graphiques permettent d'analyser l'évolution des performances et l'usage des ressources OpenAI.
 
-L’ensemble des documents doit être indexé pour que le modèle puisse s’y référer via un moteur vectoriel (type FAISS, Chroma, etc.).
+![Interface Monitoring](docs/Monitoring_Interface.png)
 
----
+### 5. Ingestion initiale
+1. Depuis l’onglet Documents, importer des fichiers `.txt`, `.pdf`, `.docx`, `.html` ou `.csv`.
+2. Chaque import passe par `DocumentExtractor` (`src/ingest.py`), `DocumentChunker` (`src/chunking.py`) puis `VectorStore.add_documents` (`src/vector_store.py`).
+3. Les métadonnées sont persistées via `Database.save_document` (`src/db/database.py`) et les fichiers sources sont déposés sous `data/documents/` pour faciliter une réindexation ultérieure.
 
-## **3. Livrables & Environnement de Test**
+### 6. Tests et évaluation automatisée
+Le dossier `eval/` contient les scripts suivants :
+- `python eval/generate_dataset.py` pour générer un dataset synthétique.
+- `python -m pytest eval/test_rag.py` pour exécuter la suite de non-régression.
+- `python eval/metrics.py` pour calculer les métriques personnalisées sur les jeux fournis dans `eval/eval/`.
 
-### **3.1 Setup minimal**
+### 7. Architecture technique
 
-Avant de commencer :
+![Architecture RAG](docs/Rag_architecture.svg)
 
-- Créer un environnement Python dédié
-- Installer les dépendances nécessaires (ex : `streamlit`, `langchain`, `openai`, `chromadb`, etc.)
-- Utiliser un modèle LLM disponible via API (`OpenAI (clef fournit)`, `Mistral`, `Claude`, etc.)
-- Créer un dossier local ou une base vectorielle pour stocker les embeddings
+```mermaid
+flowchart LR
+    subgraph UI
+        DOCS[ui/documents.py<br/>Upload et suivi]
+        CHAT[ui/chat.py<br/>Chat client]
+        MON[ui/monitoring.py<br/>Logs]
+    end
 
-### **3.2 Livrables attendus**
+    subgraph Ingestion
+        EXTRACT[src/ingest.py<br/>DocumentExtractor]
+        CHUNK[src/chunking.py<br/>DocumentChunker]
+        VECADD[src/vector_store.py<br/>VectorStore.add_documents]
+        DBSAVE[src/db/database.py<br/>save_document]
+    end
 
-| Élément | Détail attendu |
-| --- | --- |
-| 💻 Application | Interface Streamlit fonctionnelle avec deux pages |
-| 📦 Gestion de fichiers | Upload / delete + vectorisation automatisée |
-| 🔗 Intégration LLM | API propre, sécurisé, réponse contrôlée via RAG |
-| 🧹 Nettoyage des données | Pipeline de preprocessing simple et efficace |
-| 📜 Historique (bonus) | Gestion conversationnelle avec suivi des échanges |
-| 📁 README | Instructions claires pour exécuter le projet en local |
-| 🔗 GitHub | Repo : https://github.com/AI-Sisters/test_technique |
+    subgraph RAG
+        RAGENGINE[src/rag.py<br/>RAGEngine]
+        DBHIST[src/db/database.py<br/>conversations]
+        MONITOR[src/monitoring.py<br/>RAGMonitor]
+    end
 
----
+    subgraph Storage
+        VSTORE[(Chroma DB)]
+        SQL[(SQLite)]
+        FILES[(data/documents)]
+    end
 
-## **4. Évaluation**
+    USER((Utilisateur)) --> DOCS
+    DOCS --> EXTRACT --> CHUNK
+    CHUNK --> VECADD --> VSTORE
+    CHUNK --> DBSAVE --> SQL
+    DOCS --> FILES
 
-| Critère | Éléments attendus | Points |
-| --- | --- | --- |
-| ⚙️ Fonctionnalité | Upload, RAG, interface chat, vectorisation | 150pt |
-| 🧱 Architecture | Structure du projet claire, code modulaire | 100pt |
-| 🤖 Intégration IA | API LLM bien utilisée, réponses cohérentes | 75pt |
-| 🧼 Données | Pipeline de nettoyage fiable et simple | 50pt |
-| 🧪 Robustesse | Gestion des erreurs, logs, stabilité | 50pt |
-| 🎯 UX | Interface fluide, logique d’usage claire | 50pt |
-| 🎁 Bonus | Historique, logs, sécurité, documentation | +10 à +50pt |
-| **Total** |  |  |
+    USER --> CHAT --> RAGENGINE
+    RAGENGINE -->|retrieval| VSTORE
+    RAGENGINE -->|context| CHAT
+    RAGENGINE --> DBHIST --> CHAT
+    RAGENGINE --> MONITOR --> SQL
+```
 
-> 🧠 Tu peux utiliser tous les outils d’IA à disposition (ChatGPT, Copilot, etc.), mais la rigueur et la qualité de ton code primeront.
-> 
+- L’ingestion ajoute les embeddings côté Chroma et consigne les métadonnées dans SQLite. Les fichiers bruts sont conservés pour permettre la réindexation.
+- Pendant le chat, `RAGEngine` enrichit la question grâce aux chunks pertinents, enregistre les messages et publie les métriques via `RAGMonitor`.
 
----
 
-## **5. Conclusion**
+### 8. Visualisation des embeddings
+Le notebook `src/visualize_embeddings.ipynb` offre une vue interactive des embeddings stockés dans Chroma via Renumics Spotlight.
 
-Ce test a pour but de valider :
+![Visualisation des embeddings](docs/embedding_visualisation.png)
 
-- Ta capacité à **prototyper un outil complet en autonomie**
-- Ton aisance avec les concepts de **RAG, vectorisation, et intégration LLM**
-- Ta **rigueur technique** (structure, propreté du code, gestion des erreurs)
-- Ton **agilité** : apprendre vite, aller à l’essentiel, mais proprement
+1. Installer les dépendances nécessaires si besoin :
+   ```bash
+   pip install jupyter renumics-spotlight
+   ```
+   Les extensions Cleanlab ou Cleanvision sont optionnelles, les avertissements correspondants peuvent être ignorés.
+2. Vérifier que l'index Chroma contient au moins un document (`data/chroma_db/` avec la collection `legal_documents`).
+3. Démarrer Jupyter depuis la racine du projet :
+   ```bash
+   jupyter notebook src/visualize_embeddings.ipynb
+   ```
+4. Exécuter toutes les cellules :
+   - `chroma_to_dataframe` charge jusqu'à 5 000 points et assemble un DataFrame Pandas avec documents, métadonnées et vecteurs.
+   - `visualize_with_spotlight` ouvre l'interface Spotlight pour parcourir les embeddings (projection, recherche, filtrage).
 
-Tu es libre dans tes choix techniques tant que tu **justifies ton raisonnement**, que ton code est **complet et maintenable**, et que le prototype **fonctionne avec fluidité**.
+Le notebook peut aussi être lancé en mode script pour un contrôle rapide :
+
+**Windows (PowerShell) :**
+```powershell
+python - <<'PY'
+from src.visualize_embeddings import chroma_to_dataframe
+df = chroma_to_dataframe("../data/chroma_db", "legal_documents")
+print(f"{len(df)} embeddings chargés.")
+PY
+```
+
+**macOS / Linux :**
+```bash
+python3 - <<'PY'
+from src.visualize_embeddings import chroma_to_dataframe
+df = chroma_to_dataframe("../data/chroma_db", "legal_documents")
+print(f"{len(df)} embeddings chargés.")
+PY
+```
+
+### 9. Dépannage rapide
+- Si aucun document n’est trouvé, vérifier que `data/chroma_db/` contient bien les fichiers générés et que `data/database.db` a été mis à jour.
+- En cas d’erreur 401/429, confirmer la validité de la clé API et le niveau de quota.
+- Pour réinitialiser l’index, supprimer `data/chroma_db/` et `data/database.db`, puis relancer l’ingestion depuis l’onglet Documents.

@@ -50,7 +50,7 @@ class RAGMonitor:
             input_tokens: Tokens d'entrée depuis l'API (optionnel, calculé si non fourni)
             output_tokens: Tokens de sortie depuis l'API (optionnel, calculé si non fourni)
         """
-        context_length = len(context)
+        context_length = self.count_tokens(context)
         if input_tokens is None:
             input_tokens = self.count_tokens(context + query)
         if output_tokens is None:

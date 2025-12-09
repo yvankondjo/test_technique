@@ -5,6 +5,7 @@ import chromadb
 from chromadb.config import Settings
 from chromadb.utils import embedding_functions
 from src.config import Config
+import tiktoken
 class VectorStore:
     def __init__(
         self, 
@@ -37,7 +38,13 @@ class VectorStore:
             embedding_function=self.embedding_function
         )
         self.threshold = threshold
-
+        try:
+            self.encoding = tiktoken.encoding_for_model(embedding_model)
+        except KeyError:
+            try:
+                self.encoding = tiktoken.encoding_for_model("gpt-4")
+            except KeyError:
+                self.encoding = tiktoken.get_encoding("cl100k_base")
     def add_documents(self, doc_metadata: Dict, chunks: List[str]):
         """
         Ajoute des chunks d'un document à la collection (batch insertion)
@@ -78,7 +85,7 @@ class VectorStore:
         if len(query) == 0:
             return {"context": "", "sources": [], "ids": [], "documents": [], "metadatas": []}
         
-        if len(query) > 8000:
+        if len(self.encoding.encode(query)) > 8000:
             query = query[:8000]
         
         try:
